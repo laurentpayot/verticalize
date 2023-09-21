@@ -1,0 +1,57 @@
+{
+  "name": "v-pipe",
+  "version": "0.1.0",
+  "description": "A delightful pipe operator for JavaScript",
+  "author": "Laurent Payot",
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "light",
+    "lightweight",
+    "promises",
+    "pipeline",
+    "pipe",
+    "operator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurentpayot/v-pipe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/laurentpayot/v-pipe/issues"
+  },
+  "homepage": "https://github.com/laurentpayot/v-pipe",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.ts",
+        "default": "./v-pipe.js"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./v-pipe.js"
+      }
+    }
+  },
+  "main": "./v-pipe.js",
+  "types": "./index.d.ts",
+  "files": [
+    "v-pipe*.js*",
+    "index.d.ts"
+  ],
+  "engines": {
+    "node": ">=15.14.0"
+  },
+  "scripts": {
+    "build:js": "terser v-pipe.js --compress module=true --mangle module=true --source-map --output v-pipe.min.js",
+    "size": "printf '_%.0s' {1..40} && echo \"\n\nMinified brotli size:\t`brotli -Zcn v-pipe.min.js | wc -c` bytes\nMinified gzip size:\t`gzip -9cn v-pipe.min.js | wc -c` bytes\"",
+    "build": "pnpm build:js && pnpm --silent size",
+    "test": "node tests",
+    "prepublish": "pnpm build && pnpm test && git push && git push --tags"
+  },
+  "devDependencies": {
+    "terser": "5.16.2"
+  }
+}
