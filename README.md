@@ -20,7 +20,7 @@ const { status } = await send(capitalize(greeting) + "!")
 console.log(status)
 ```
 
-easier to understand by using the `V` pipe:
+easier to understand by using the `V` pipe *function*:
 
 ```js
 V( greeting,    // pipe entrance ➡ "hi"
