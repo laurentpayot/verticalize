@@ -1,5 +1,5 @@
 import assert from 'assert/strict'
-import { V } from './v-pipe.js'
+import { V } from './v-pipe.min.js'
 
 
 assert.equal( 3,
