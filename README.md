@@ -60,19 +60,14 @@ Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-brows
 
 ## `V` function usage
 
-The gist example above covers pretty much everything.
-
-Just call the `V` function with the initial *value* as the first argument, followed the other arguments, each one wrapped by another `V` at the beginning of a new line.
-These different types of wrapped arguments can be unary functions, methods or properties, but not values.
+The gist example above covers pretty much everything. Just call the `V` function with the initial *value* as the first argument, followed by the other arguments, each one wrapped by another `V` at the beginning of a new line to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub> syntax. These different types of wrapped arguments can be unary functions, methods or properties, but not values (except the initial value).
 
 ### Unary function call
 
-A unary function is a function that takes only one argument. Add a new line and wrap your function with a `V` call to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub> syntax.
-
-You can use an anonymous ("arrow") function to turn multi-argument functions into unary ones.
+A unary function is a function that takes only one argument. You can use an anonymous ("arrow") function to turn a multi-argument function into a unary one.
 
 ```js
-V( 1.9,
+V( 1.9,                  // initial value
 V (Math.round),          // unary function
 V (n => Math.pow(n, 3)), // binary function turned into unary
 ) // returns 8
