@@ -88,7 +88,7 @@ V .length,            // getting the Array property `length`
 
 ### Promises
 
-When the previous V-pipe output (or the initial value) is a promise, the next V-pipe will automatically chain it so you don’t need to write many `.then()` yourself.
+When the previous V-pipe output (or the initial value) is a promise, the next V-pipe will automatically chain it so you don’t have to write many `.then()` yourself.
 
 ```js
 const greeting =
