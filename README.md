@@ -13,26 +13,26 @@ A pipe-like function to verticalize your JavaScript code
 
 ## Gist
 
-Make the following example code
+The following example code is OK but a bit hard to read:
 
 ```js
 const { status } = await send(capitalize(greeting) + "!")
 console.log(status)
 ```
 
-more readable by using the `V` pipe-like function:
+Make it less nested, more "vertical", by using the `V` pipe-like function:
 
 ```js
 V( greeting,     // initial value ➡ "hi"
 V (capitalize),  // custom function call ➡ "Hi"
-V .concat("!"),  // String method call ➡ "Hi!"
-V (send),        // custom async function call ➡ Promise {<pending>}
-V .status,       // automatic promise chaining + getting property value ➡ 200
-V (console.log), // global function call ➡ logs 200 to the console
+V .concat("!"),  // String method `concat` call ➡ "Hi!"
+V (send),        // custom async function call ➡ Promise { <pending> }
+V .status,       // automatic promise chaining + getting property ➡ Promise { 200 }
+V (console.log), // automatic promise chaining + global function call ➡ logs 200
 )
 ```
 
-The `V` function of Verticalize is only [20 lines of code](https://github.com/laurentpayot/verticalize/blob/main/verticalize.js) long, without dependencies, and around 200 bytes minified and compressed so it won’t bloat your bundle.
+Verticalize’s `V` function is only [20 lines of code](https://github.com/laurentpayot/verticalize/blob/main/verticalize.js) long, without dependencies, and around 200 bytes minified and compressed. It won’t bloat your bundle.
 
 ## NodeJS
 
@@ -50,7 +50,7 @@ import { V } from 'verticalize'
 
 ## Browser
 
-Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers. Import the `V` function from the `verticalize.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
+Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), [widely supported](https://caniuse.com/es6-module) in browsers nowadays. Import the `V` function from the `verticalize.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
 
 ```html
 <script type="module">
@@ -60,9 +60,11 @@ Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-brows
 
 ## `V` function usage
 
-The gist example above covers pretty much everything. Just call the `V` function with the initial *value* as the first argument, followed by the other arguments, each one wrapped by another `V` at the beginning of a new line to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub> syntax. These different types of wrapped arguments can be unary functions, methods or properties, but not values (except the initial value).
+The gist example above covers pretty much everything. Just call the `V` function with the initial *value* as the first argument, followed by the other arguments wrapped by another `V` at the beginning of the line to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub> syntax. All these `V`-prefixed lines, or "***V-pipes***", will then act like a pipeline, the output of a pipe being the input of the following pipe.
 
-### Unary function call
+V-pipes use unary functions, methods and properties, but not values (except for the initial value).
+
+### Unary functions
 
 A unary function is a function that takes only one argument. You can use an anonymous ("arrow") function to turn a multi-argument function into a unary one.
 
@@ -73,32 +75,27 @@ V (n => Math.pow(n, 3)), // binary function turned into unary
 ) // returns 8
 ```
 
-### Method call
+### Methods and properties
 
-TO DO
-
-```js
-V .fn(x, y, z)
-```
-
-### Get property value
-
-TO DO
+To call a method or to get a property of the previous V-pipe output (or of the initial value), you can use an anonymous function like `count => count.add(1)`, but or convenience Verticalize allows you to use a direct dot syntax.
 
 ```js
-V .prop
+V ( [1, 2, 3],        // initial Array value
+V .concat([4, 5, 6]), // calling the Array method `concat()` (returning an Array)
+V .length,            // getting the Array property `length`
+) // returns 6
 ```
 
 ### Promises
 
-When a `V` function or method or property returns a promise, or the initial value is a Promise, the next `V` will automatically chain it so you don’t need to write many `.then()` yourself.
+When the previous V-pipe output (or the initial value) is a promise, the next V-pipe will automatically chain it so you don’t need to write many `.then()` yourself.
 
 ```js
 const greeting =
   await
-  V( Promise.resolve("Hello!")
-  V .toUpperCase()
-  ) // returns "HELLO!"
+  V( Promise.resolve("Hello!"),
+  V .toUpperCase(),
+  )
 ```
 is the same as
 ```js
@@ -109,7 +106,7 @@ const greeting =
 
 ## Note
 
-[A pipe operator `|>` TC39 proposal](https://github.com/tc39/proposal-pipeline-operator) was created in 2021 and is currently in stage 2. It may or may not be included in the official JavaScript specs in a few years. If so, then it will take a few more years to be adopted by all the major browsers and runtimes. But you can use Verticalize *right now* :wink:
+[A pipe operator `|>` TC39 proposal](https://github.com/tc39/proposal-pipeline-operator) was created in 2021 and is currently in stage 2. It may or may not be included in the official JavaScript specs in a few years. If so, then it will take a few more years to be adopted by all the major browsers and runtimes. But you can use Verticalize *right now* and enjoy its unique dot syntax and automatic promise chaining features :wink:
 
 ## License
 

@@ -60,6 +60,13 @@ assert.equal( 8,
     )
 )
 
+assert.equal( 6,
+    V( [1, 2, 3],
+    V .concat([4, 5, 6]),
+    V .length,
+    )
+)
+
 assert.equal( "HELLO!",
     await
     V( Promise.resolve("Hello!"),
