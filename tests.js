@@ -30,6 +30,8 @@ assert.equal( 9,
 
 // README examples
 
+const greeting = "hi"
+
 function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.substring(1)
 }
@@ -38,9 +40,12 @@ async function send(msg) {
     return await new Promise(resolve => setTimeout(resolve({ msg, status: 200 }), 50))
 }
 
+const { status } = await send(capitalize(greeting) + "!")
+assert.equal( 200, status)
+
 assert.equal( 200,
     await
-    V( "hi",
+    V( greeting,
     V (capitalize),
     V .concat("!"),
     V (send),
