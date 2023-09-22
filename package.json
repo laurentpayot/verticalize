@@ -1,15 +1,17 @@
 {
   "name": "verticalize",
   "version": "0.1.0",
-  "description": "A delightful pipe operator for JavaScript",
+  "description": "A pipe-like function to verticalize your JavaScript code",
   "author": "Laurent Payot",
   "license": "MIT",
   "keywords": [
     "javascript",
     "light",
     "lightweight",
+    "syntax",
     "promises",
     "pipeline",
+    "code",
     "pipe",
     "operator"
   ],
