@@ -23,7 +23,7 @@ console.log(status)
 more readable by using the `V` pipe-like function:
 
 ```js
-V( greeting,     // pipe entrance ➡ "hi"
+V( greeting,     // initial value ➡ "hi"
 V (capitalize),  // custom function call ➡ "Hi"
 V .concat("!"),  // String method call ➡ "Hi!"
 V (send),        // custom async function call ➡ Promise {<pending>}
