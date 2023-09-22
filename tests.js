@@ -1,5 +1,5 @@
 import assert from 'assert/strict'
-import { V } from './v-pipe.min.js'
+import { V } from './verticalize.min.js'
 
 
 assert.equal( 3,
@@ -30,7 +30,23 @@ assert.equal( 9,
 
 // README examples
 
+function capitalize(s) {
+    return s.charAt(0).toUpperCase() + s.substring(1)
+}
 
+async function send(msg) {
+    return await new Promise(resolve => setTimeout(resolve({ msg, status: 200 }), 50))
+}
+
+assert.equal( 200,
+    await
+    V( "hi",
+    V (capitalize),
+    V .concat("!"),
+    V (send),
+    V .status,
+    )
+)
 
 assert.equal( "HELLO!",
     await

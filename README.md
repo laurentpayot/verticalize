@@ -1,15 +1,15 @@
-# V-pipe <sub><img src="v-pipe.svg" alt="triple chevron down" width="48" height="48"></sub>
+# Verticalize <sub><img src="verticalize.svg" alt="triple chevron down" width="48" height="48"></sub>
 
 A delightful pipe operator for JavaScript
 
-![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/v-pipe/main/v-pipe.min.js)
-![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/v-pipe/main/v-pipe.min.js)
+![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/verticalize/main/verticalize.min.js)
+![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/verticalize/main/verticalize.min.js)
 
-<!-- [![dependencies](https://badgen.net/bundlephobia/dependency-count/v-pipe)](https://bundlephobia.com/package/v-pipe) -->
-[![dependencies](https://img.shields.io/badge/dependencies-None-green)](https://github.com/laurentpayot/v-pipe/blob/main/package.json#L60)
-[![types](https://badgen.net/npm/types/v-pipe)](https://github.com/laurentpayot/v-pipe/blob/main/index.d.ts)
-[![npm](https://badgen.net/npm/v/v-pipe)](https://www.npmjs.com/package/v-pipe)
-[![license](https://badgen.net/github/license/laurentpayot/v-pipe)](https://github.com/laurentpayot/v-pipe/blob/main/LICENSE)
+<!-- [![dependencies](https://badgen.net/bundlephobia/dependency-count/verticalize)](https://bundlephobia.com/package/verticalize) -->
+[![dependencies](https://img.shields.io/badge/dependencies-None-green)](https://github.com/laurentpayot/verticalize/blob/main/package.json#L60)
+[![types](https://badgen.net/npm/types/verticalize)](https://github.com/laurentpayot/verticalize/blob/main/index.d.ts)
+[![npm](https://badgen.net/npm/v/verticalize)](https://www.npmjs.com/package/verticalize)
+[![license](https://badgen.net/github/license/laurentpayot/verticalize)](https://github.com/laurentpayot/verticalize/blob/main/LICENSE)
 
 ## Why
 
@@ -37,22 +37,22 @@ V (console.log) // global function call ➡ logs 200 to the console
 ### Installation
 
 ```bash
-npm install v-pipe
+npm install verticalize
 ```
 
 ### Import
 
 ```js
-import { V } from 'v-pipe'
+import { V } from 'verticalize'
 ```
 
 ## Browser
 
-V-pipe uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers. Import the `V` function from the `v-pipe.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
+Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-browsers/), now [widely supported](https://caniuse.com/es6-module) in browsers. Import the `V` function from the `verticalize.min.js` file. This file can be located in a CDN (example below) or copied in any directory of your website (for better performance and to be GDPR compliant, since you don’t have to connect to a third party server).
 
 ```html
 <script type="module">
-  import { V } from 'https://cdn.jsdelivr.net/npm/v-pipe@0.1.0/v-pipe.min.js'
+  import { V } from 'https://cdn.jsdelivr.net/npm/verticalize@0.1.0/verticalize.min.js'
 </script>
 ```
 
@@ -102,8 +102,8 @@ const greeting =
 
 ## License
 
-[MIT](https://github.com/laurentpayot/v-pipe/blob/main/LICENSE)
+[MIT](https://github.com/laurentpayot/verticalize/blob/main/LICENSE)
 
 ## Stargazers :heart:
 
-[![Stargazers repo roster for @laurentpayot/v-pipe](https://reporoster.com/stars/laurentpayot/v-pipe)](https://github.com/laurentpayot/v-pipe/stargazers)
+[![Stargazers repo roster for @laurentpayot/verticalize](https://reporoster.com/stars/laurentpayot/verticalize)](https://github.com/laurentpayot/verticalize/stargazers)
