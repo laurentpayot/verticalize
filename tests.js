@@ -53,6 +53,13 @@ assert.equal( 200,
     )
 )
 
+assert.equal( 8,
+    V( 1.9,
+    V (Math.round),
+    V (n => Math.pow(n, 3)),
+    )
+)
+
 assert.equal( "HELLO!",
     await
     V( Promise.resolve("Hello!"),
@@ -65,3 +72,5 @@ assert.equal( "HELLO!",
     Promise.resolve("Hello!")
     .then(s => s.toUpperCase())
 )
+
+console.log("All tests passed.")
