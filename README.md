@@ -60,7 +60,7 @@ Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-brows
 
 ## `V` function usage
 
-The gist example above covers pretty much everything. Just call the `V` function with the initial *value* as the first argument, followed by the other arguments wrapped by another `V` at the beginning of the line to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub>&nbsp;syntax. All these `V`-prefixed lines, or "***V-pipes***", will then act like a pipeline, the output of a pipe being the input of the following pipe.
+The gist example above covers pretty much everything. Just call the `V` function with the initial *value* as the first argument, followed by the other arguments wrapped by another `V` at the beginning of the line to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub> syntax. All these `V`-prefixed lines, or "***V-pipes***", will then act like a pipeline, the output of a pipe being the input of the following pipe.
 
 V-pipes use unary functions, methods and properties, but not values (except for the initial value).
 
