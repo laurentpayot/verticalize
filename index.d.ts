@@ -1,1 +1,1 @@
-export const V: ((value: any, ...functions: Function[]) => any) | object
+export const V: ((value: any, ...functions: Function[] | V) => any) | object
