@@ -14,7 +14,7 @@ export const V = new Proxy(
     { get(_, prop) {
         const toFn = (...args) => out => {
             if (typeof out[prop] !== 'function')
-                throw new Error(`Verticalize output has no method .${prop}()`)
+                throw new Error(`Verticalize pipe output has no method .${prop}()`)
             return out[prop].apply(out, args)
         }
         toFn._Vprop = prop

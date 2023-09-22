@@ -80,4 +80,7 @@ assert.equal( "HELLO!",
     .then(s => s.toUpperCase())
 )
 
+// TODO error tests
+
+
 console.log("All tests passed.")
