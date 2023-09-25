@@ -13,7 +13,7 @@ A pipe-like function to verticalize your JavaScript code
 
 ## Gist
 
-The following example code is OK but a bit hard to read:
+The following example code is a bit hard to read:
 
 ```js
 const { status } = await send(capitalize(greeting) + "!")
