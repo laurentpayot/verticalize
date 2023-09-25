@@ -124,152 +124,152 @@ assert.throws(
 )
 
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V (undefined),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: 'Verticalize: undefined value is not a function'
-//     }
-//     )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V (undefined),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: 'Verticalize: undefined value is not a function'
+    }
+    )
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V (null),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: 'Verticalize: null value is not a function'
-//     }
-// )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V (null),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: 'Verticalize: null value is not a function'
+    }
+)
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V ("foo"),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: 'Verticalize: String value is not a function'
-//     }
-// )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V ("foo"),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: 'Verticalize: String value is not a function'
+    }
+)
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V (""),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: 'Verticalize: String value is not a function'
-//     }
-// )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V (""),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: 'Verticalize: String value is not a function'
+    }
+)
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V (0),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: "Verticalize: Number value is not a function"
-//     }
-// )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V (0),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: "Verticalize: Number value is not a function"
+    }
+)
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V (1),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: "Verticalize: Number value is not a function"
-//     }
-// )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V (1),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: "Verticalize: Number value is not a function"
+    }
+)
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V ([4, 5, 6]),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: "Verticalize: Array value is not a function"
-//     }
-// )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V ([4, 5, 6]),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: "Verticalize: Array value is not a function"
+    }
+)
 
-// assert.throws(
-//     () => {
-//         V( [1, 2, 3],
-//         V ({a: 1, b: 2}),
-//         )
-//     },
-//     {
-//         name: 'TypeError',
-//         message: 'Verticalize: Object value is not a function'
-//     }
-// )
+assert.throws(
+    () => {
+        V( [1, 2, 3],
+        V ({a: 1, b: 2}),
+        )
+    },
+    {
+        name: 'TypeError',
+        message: 'Verticalize: Object value is not a function'
+    }
+)
 
-// // README examples
+// README examples
 
-// const greeting = "hi"
+const greeting = "hi"
 
-// function capitalize(s) {
-//     return s.charAt(0).toUpperCase() + s.substring(1)
-// }
+function capitalize(s) {
+    return s.charAt(0).toUpperCase() + s.substring(1)
+}
 
-// async function send(msg) {
-//     return await new Promise(resolve => setTimeout(resolve({ msg, status: 200 }), 50))
-// }
+async function send(msg) {
+    return await new Promise(resolve => setTimeout(resolve({ msg, status: 200 }), 50))
+}
 
-// const { status } = await send(capitalize(greeting) + "!")
-// assert.equal( 200, status)
+const { status } = await send(capitalize(greeting) + "!")
+assert.equal( 200, status)
 
-// assert.equal( 200,
-//     await
-//     V( greeting,
-//     V (capitalize),
-//     V .concat("!"),
-//     V (send),
-//     V .status,
-//     )
-// )
+assert.equal( 200,
+    await
+    V( greeting,
+    V (capitalize),
+    V .concat("!"),
+    V (send),
+    V .status,
+    )
+)
 
-// assert.equal( 8,
-//     V( 1.9,
-//     V (Math.round),
-//     V (n => Math.pow(n, 3)),
-//     )
-// )
+assert.equal( 8,
+    V( 1.9,
+    V (Math.round),
+    V (n => Math.pow(n, 3)),
+    )
+)
 
-// assert.equal( 6,
-//     V( [1, 2, 3],
-//     V .concat([4, 5, 6]),
-//     V .length,
-//     )
-// )
+assert.equal( 6,
+    V( [1, 2, 3],
+    V .concat([4, 5, 6]),
+    V .length,
+    )
+)
 
-// assert.equal( "HELLO!",
-//     await
-//     V( Promise.resolve("Hello!"),
-//     V .toUpperCase(),
-//     )
-// )
+assert.equal( "HELLO!",
+    await
+    V( Promise.resolve("Hello!"),
+    V .toUpperCase(),
+    )
+)
 
-// assert.equal( "HELLO!",
-//     await
-//     Promise.resolve("Hello!")
-//     .then(s => s.toUpperCase())
-// )
+assert.equal( "HELLO!",
+    await
+    Promise.resolve("Hello!")
+    .then(s => s.toUpperCase())
+)
 
 console.log("All tests passed.")
