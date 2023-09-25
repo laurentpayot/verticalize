@@ -20,7 +20,7 @@ const { status } = await send(capitalize(greeting) + "!")
 console.log(status)
 ```
 
-Make it less nested, more "vertical", by using the `V` pipe-like function:
+Make it less nested, more vertical, by using the `V` "pipe":
 
 ```js
 V( greeting,     // initial value ➡ "hi"
@@ -60,9 +60,7 @@ Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-brows
 
 ## `V` function usage
 
-The gist example above covers pretty much everything. Just call the `V` function with the initial *value* as the first argument, followed by the other arguments wrapped by another `V` at the beginning of the line to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub> syntax. All these `V`-prefixed lines, or "***V-pipes***", will then act like a pipeline, the output of a pipe being the input of the following pipe.
-
-V-pipes use unary functions, methods and properties, but not values (except for the initial value).
+The gist example above covers pretty much everything. Just call the `V` function with the initial *value* as the first argument, followed by the other arguments wrapped by another `V` at the beginning of the line to get a nice <sub><img src="verticalize.svg" alt="triple chevron down" width="18" height="18"></sub> syntax. All these `V`-prefixed lines will then act like a pipeline, the output of a pipe being the input of the following pipe. Pipes can use unary functions, methods and properties, but not values (except for the initial value).
 
 ### Unary functions
 
@@ -77,7 +75,7 @@ V (n => Math.pow(n, 3)), // binary function turned into unary
 
 ### Methods and properties
 
-To call a method or to get a property of the previous V-pipe output (or of the initial value), you can use an anonymous function like `count => count.add(1)`, but or convenience Verticalize allows you to use a direct dot syntax.
+To call a method or to get a property of the previous pipe output (or of the initial value), you can use an anonymous function like `count => count.add(1)`, but or convenience Verticalize allows you to use a direct dot syntax.
 
 ```js
 V ( [1, 2, 3],        // initial Array value
@@ -88,7 +86,7 @@ V .length,            // getting the Array property `length`
 
 ### Promises
 
-When the previous V-pipe output (or the initial value) is a promise, the next V-pipe will automatically chain it so you don’t have to write many `.then()` yourself.
+When the previous pipe output (or the initial value) is a promise, the next pipe will automatically chain it so you don’t have to write many `.then()` yourself.
 
 ```js
 const greeting =
