@@ -32,7 +32,7 @@ V (console.log), // automatic promise chaining + global function call ➡ logs 2
 )
 ```
 
-Verticalize’s `V` function is only [20 lines of code](https://github.com/laurentpayot/verticalize/blob/main/verticalize.js) long, without dependencies, and around 200 bytes minified and compressed. It won’t bloat your bundle.
+Verticalize’s `V` function is around 200 bytes minified and compressed, without dependencies. It won’t bloat your web app.
 
 ## NodeJS
 
