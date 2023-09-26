@@ -20,7 +20,7 @@ const { status } = await send(capitalize(greeting) + "!")
 console.log(status)
 ```
 
-Make it less nested, more vertical, by using the `V` "pipe":
+Make it less nested, more *vertical*, by using the `V` "pipe":
 
 ```js
 V( greeting,     // initial value ➡ "hi"
