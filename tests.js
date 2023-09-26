@@ -1,6 +1,61 @@
 import assert from 'assert/strict'
-import { V } from './verticalize.js'
+import { V } from './verticalize.min.js'
 
+
+// README examples
+
+const greeting = "hi"
+
+function capitalize(s) {
+    return s.charAt(0).toUpperCase() + s.substring(1)
+}
+
+async function send(msg) {
+    return await new Promise(resolve => setTimeout(resolve({ msg, status: 200 }), 50))
+}
+
+const { status } = await send(capitalize(greeting) + "!")
+assert.equal(200, status)
+
+assert.equal(200,
+    await
+        V(greeting,
+            V(capitalize),
+            V.concat("!"),
+            V(send),
+            V.status,
+        )
+)
+
+assert.equal(8,
+    V(1.9,
+        V(Math.round),
+        V(n => Math.pow(n, 3)),
+    )
+)
+
+assert.equal(6,
+    V([1, 2, 3],
+        V.concat([4, 5, 6]),
+        V.length,
+    )
+)
+
+assert.equal("HELLO!",
+    await
+        V(Promise.resolve("Hello!"),
+            V.toUpperCase(),
+        )
+)
+
+assert.equal("HELLO!",
+    await
+        Promise.resolve("Hello!")
+            .then(s => s.toUpperCase())
+)
+
+
+// Other examples
 
 assert.equal(
     V( [1, 2, 3],
@@ -36,6 +91,9 @@ assert.equal(
     ),
     undefined
 )
+
+
+// Errors
 
 assert.throws(
     () => {
@@ -220,56 +278,5 @@ assert.throws(
     }
 )
 
-// README examples
-
-const greeting = "hi"
-
-function capitalize(s) {
-    return s.charAt(0).toUpperCase() + s.substring(1)
-}
-
-async function send(msg) {
-    return await new Promise(resolve => setTimeout(resolve({ msg, status: 200 }), 50))
-}
-
-const { status } = await send(capitalize(greeting) + "!")
-assert.equal( 200, status)
-
-assert.equal( 200,
-    await
-    V( greeting,
-    V (capitalize),
-    V .concat("!"),
-    V (send),
-    V .status,
-    )
-)
-
-assert.equal( 8,
-    V( 1.9,
-    V (Math.round),
-    V (n => Math.pow(n, 3)),
-    )
-)
-
-assert.equal( 6,
-    V( [1, 2, 3],
-    V .concat([4, 5, 6]),
-    V .length,
-    )
-)
-
-assert.equal( "HELLO!",
-    await
-    V( Promise.resolve("Hello!"),
-    V .toUpperCase(),
-    )
-)
-
-assert.equal( "HELLO!",
-    await
-    Promise.resolve("Hello!")
-    .then(s => s.toUpperCase())
-)
 
 console.log("All tests passed.")
