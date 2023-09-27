@@ -32,6 +32,18 @@ V (console.log), // automatic promise chaining + global function call ➡ logs 2
 )
 ```
 
+If your IDE or a tool like Prettier automatically formats the code for you, it may result in the following syntax (still working):
+
+```js
+V(greeting,
+  V(capitalize),
+  V.concat("!"),
+  V(send),
+  V.status,
+  V(console.log),
+)
+```
+
 Verticalize’s `V` function is around 200 bytes minified and compressed, without dependencies. It won’t bloat your web app.
 
 ## NodeJS
