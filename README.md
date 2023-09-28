@@ -103,15 +103,17 @@ When the previous pipe output (or the initial value) is a promise, the next pipe
 ```js
 const greeting =
   await
-  V( Promise.resolve("Hello!"),
+  V( Promise.resolve("Hello"),
   V .toUpperCase(),
+  V .concat("!!!"),
   )
 ```
 is the same as
 ```js
 const greeting =
-  await Promise.resolve("Hello!")
+  await Promise.resolve("Hello")
     .then(s => s.toUpperCase())
+    .then(s => s.concat("!!!"))
 ```
 
 ## Note
