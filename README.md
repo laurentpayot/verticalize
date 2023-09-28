@@ -116,7 +116,7 @@ const greeting =
 
 ## Note
 
-[A TC39 proposal](https://github.com/tc39/proposal-pipeline-operator) for the pipe operator `|>` was created in 2021 and is currently in stage 2. It may or may not be included in the official JavaScript specs in a few years. If so, then it will take a few more years to be adopted by all the major browsers and runtimes. But you can use Verticalize *right now* and enjoy its unique dot syntax and automatic promise chaining features :wink:
+A TC39 proposal for the pipe operator `|>` [was created in 2015](https://github.com/tc39/proposal-pipeline-operator/blob/main/HISTORY.md) and is currently in stage 2. It may or may not be included in the official JavaScript specs in a few years. If so, then it will take a few more years to be adopted by all the major browsers and runtimes. But you can use Verticalize *right now* and enjoy its unique dot syntax and automatic promise chaining features :wink:
 
 ## License
 
