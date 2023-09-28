@@ -1,6 +1,6 @@
 {
   "name": "verticalize",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A pipe-like function to verticalize your JavaScript code",
   "author": "Laurent Payot",
   "license": "MIT",

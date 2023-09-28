@@ -66,7 +66,7 @@ Verticalize uses [ES modules](https://jakearchibald.com/2017/es-modules-in-brows
 
 ```html
 <script type="module">
-  import { V } from 'https://cdn.jsdelivr.net/npm/verticalize@0.1.2/verticalize.min.js'
+  import { V } from 'https://cdn.jsdelivr.net/npm/verticalize@0.1.3/verticalize.min.js'
 </script>
 ```
 

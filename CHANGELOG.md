@@ -1,5 +1,11 @@
 # Verticalize changelog
 
+## 0.1.3
+
+_2023-09-28_
+
+npm documentation update
+
 ## 0.1.2
 
 _2023-09-26_
