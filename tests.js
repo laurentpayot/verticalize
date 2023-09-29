@@ -15,43 +15,49 @@ async function send(msg) {
 }
 
 const { status } = await send(capitalize(greeting) + "!")
-assert.equal(200, status)
+assert.equal(status, 200)
 
-assert.equal(200,
+assert.equal(
     await
         V(greeting,
             V(capitalize),
             V.concat("!"),
             V(send),
             V.status,
-        )
+        ),
+    200
 )
 
-assert.equal(8,
+assert.equal(
     V(1.9,
         V(Math.round),
         V(n => Math.pow(n, 3)),
-    )
+    ),
+    8
 )
 
-assert.equal(6,
+assert.equal(
     V([1, 2, 3],
         V.concat([4, 5, 6]),
         V.length,
-    )
+    ),
+    6
 )
 
-assert.equal("HELLO!",
+assert.equal(
     await
         V(Promise.resolve("Hello!"),
             V.toUpperCase(),
-        )
+        ),
+    "HELLO!"
 )
 
-assert.equal("HELLO!",
+assert.equal(
     await
         Promise.resolve("Hello!")
             .then(s => s.toUpperCase())
+    ,
+    "HELLO!"
 )
 
 
