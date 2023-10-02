@@ -90,7 +90,7 @@ V (n => Math.pow(n, 3)), // binary function turned into unary
 To call a method or to get a property of the previous pipe output (or of the initial value), you can use an anonymous function like `count => count.add(1)`, but or convenience Verticalize allows you to use a direct dot syntax.
 
 ```js
-V ( [1, 2, 3],        // initial Array value
+V( [1, 2, 3],         // initial Array value
 V .concat([4, 5, 6]), // calling the Array method `concat()` (returning an Array)
 V .length,            // getting the Array property `length`
 ) // returns 6
