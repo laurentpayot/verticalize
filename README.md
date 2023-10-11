@@ -44,7 +44,7 @@ V(greeting,
 )
 ```
 
-Verticalize’s `V` function is around 200 bytes minified and compressed, without dependencies. It won’t bloat your web app.
+Verticalize’s `V` function is around 200 bytes minified and compressed, and has no dependencies. It won’t bloat your web app.
 
 ## NodeJS
 
