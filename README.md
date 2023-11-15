@@ -126,4 +126,4 @@ A TC39 proposal for the pipe operator `|>` [was created in 2015](https://github.
 
 ## Stargazers :heart:
 
-[![Stargazers repo roster for @laurentpayot/verticalize](https://reporoster.com/stars/laurentpayot/verticalize)](https://github.com/laurentpayot/verticalize/stargazers)
+[![Stargazers repo roster for @laurentpayot/verticalize](http://reporoster.com/stars/laurentpayot/verticalize)](https://github.com/laurentpayot/verticalize/stargazers)
