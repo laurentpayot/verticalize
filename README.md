@@ -4,8 +4,8 @@ A pipe-like function to verticalize your JavaScript code
 
 <!-- [![dependencies](https://badgen.net/bundlephobia/dependency-count/verticalize)](https://bundlephobia.com/package/verticalize) -->
 [![dependencies](https://badgen.net/static/dependencies/None/green)](https://github.com/laurentpayot/verticalize/blob/main/package.json#L56)
-![minified + brotlied size](https://badgen.net/badgesize/brotli/laurentpayot/verticalize/main/verticalize.min.js)
-![minified + zipped size](https://badgen.net/badgesize/gzip/laurentpayot/verticalize/main/verticalize.min.js)
+![minified + brotlied size](https://badgen.net/static/minified%20brotli/228%20bytes/green)
+![minified + zipped size](https://badgen.net/static/minified%20zip/265%20bytes/green)
 
 [![types](https://badgen.net/npm/types/verticalize)](https://github.com/laurentpayot/verticalize/blob/main/index.d.ts)
 [![npm](https://badgen.net/npm/v/verticalize)](https://www.npmjs.com/package/verticalize)
