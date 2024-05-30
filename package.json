@@ -54,6 +54,6 @@
     "prepublish": "pnpm build && pnpm test && git push && git push --tags"
   },
   "devDependencies": {
-    "terser": "^5.30.2"
+    "terser": "^5.31.0"
   }
 }
